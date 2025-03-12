@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .counter-container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #counter {
+            font-size: 3rem;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+      
+.increase{ 
+    background-color: black;
+    color: white;
+    border:1px solid black;
+    border-radius: 10px;
+}
+.decrease{ 
+    background-color: black;
+    color: white;
+    border:1px solid black;
+    border-radius: 10px;
+}
+.reset{ 
+    background-color: green;
+    color: white;
+    border:1px solid green;
+    border-radius: 10px;
+}
+
+
+        button:hover {
+            opacity: 0.8;
+            border: 2px solid black;
+            color:black;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+        }
+        .reset:hover{ 
+    background-color: white;
+    color: green;
+    border:1px solid green;
+    border-radius: 10px;
+}
+    </style>
+</head>
+<body>
+
+<main>
+    <section class="counter-container">
+        <h1>Counter</h1>
+        <p id="counter">0</p>
+        <button class="increase">Increase</button>
+        <button class="decrease">Decrease</button>
+        <button class="reset">Reset</button>
+    </section>
+</main>
+
+
+    <script >
+         let currentcount = 0;
+        const counterValue = document.getElementById('counter');
+        document.querySelector('.increase').addEventListener('click', () => {
+            currentcount++;
+            counterValue.textContent = currentcount;
+        });
+        document.querySelector('.decrease').addEventListener('click', () => {
+            if (currentcount > 0) {
+                currentcount--;
+                counterValue.textContent = currentcount;
+            }
+        });
+        document.querySelector('.reset').addEventListener('click', () => {
+            currentcount = 0;
+            counterValue.textContent = currentcount;
+        });
+    </script>
+</div>
+
+</body>
+</html>
