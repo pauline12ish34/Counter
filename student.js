@@ -24,7 +24,7 @@ function calculateAverageGrade(students) {
     const averages = {};
     // students.forEach
     students.forEach(student => {
-        const sum = student.grades.reduce((acc, grade) => acc + grade, 0);
+        const sum = student.grades.reduce((std, grade) => std + grade, 0);
         let avg=0
         if (student.grades.length){
              avg= sum / student.grades.length
@@ -43,14 +43,17 @@ function findTopStudents(students, thresholdpass) {
         return avg > thresholdpass;
     });
 }
+ function  sort(students){
+    
+    return [...students].sort((sdt1,std2)=>{
+        return sdt1.avg-std2.avg;
 
-
-
-// to sort these student according to their grades  I will  do bubble sort
-
+    });
+ }
 
 
 console.log(calculateAverageGrade(students));
 console.log(findTopStudents(students, 50));
+ console.log(sort(students));
 
 
